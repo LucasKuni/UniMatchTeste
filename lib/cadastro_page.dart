@@ -47,7 +47,6 @@ class _CadastroPageState extends State<CadastroPage> {
                     print(text);
                     email = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'Email',
                     border: OutlineInputBorder(),
@@ -59,7 +58,6 @@ class _CadastroPageState extends State<CadastroPage> {
                     print(text);
                     CPF = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'CPF',
                     border: OutlineInputBorder(),
@@ -71,7 +69,6 @@ class _CadastroPageState extends State<CadastroPage> {
                     print(text);
                     Telefone = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'Telefone',
                     border: OutlineInputBorder(),
@@ -83,7 +80,6 @@ class _CadastroPageState extends State<CadastroPage> {
                     print(text);
                     DatNasc = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'Data de Nascimento',
                     border: OutlineInputBorder(),
@@ -95,7 +91,6 @@ class _CadastroPageState extends State<CadastroPage> {
                     print(text);
                     Uni = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'Universidade',
                     border: OutlineInputBorder(),
@@ -107,7 +102,6 @@ class _CadastroPageState extends State<CadastroPage> {
                     print(text);
                     UniPref = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'Universidade que mais lhe agrada',
                     border: OutlineInputBorder(),

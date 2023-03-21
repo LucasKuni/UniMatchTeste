@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:unimatchteste/login_page.dart';
+import 'package:unimatchteste/perfil_page.dart';
+import 'package:unimatchteste/cadastro_page.dart';
 
 class HomePage extends StatefulWidget{ // cria um estado HomePage
   @override                            // Da pra alterar enquanto roda o app
@@ -15,14 +18,87 @@ class HomePageState extends State<HomePage>{
   Widget build(BuildContext context) {
     return Scaffold(                      // Tela branca no fundo
       appBar: AppBar(                   // Molda a tela para se assemelhar a um App
-          centerTitle : true,
-          title : Text('UniMatch'),
-          ),
+        centerTitle : true,
+        title : Text('UniMatch'),
+        ),
       body: Container(
-        height: 800,
-        width: 500,
+        height: 900,
+        width: 600,
         color: Colors.pink[100],
-        child: Align(                     // alinhamento do container
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //posicao de tudo
+          //crossAxisAlignment: CrossAxisAlignment.center, // posicao cruz
+          children: [
+            Text('Contador: $counter'),
+            Container(height: 50,),  // espacamento altura
+            //CustomSwitch(),
+            Container(height: 50,),
+
+            Row(                    // linha/oposto da Column
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.black,
+                )
+              ],
+            )
+          ],
+        ),
+      ),
+
+      drawer: Drawer(  //CRIA MENU NA TELA PRINCIPAL, 3 BARRINHAS
+        child: ListView(
+          children: [
+            DrawerHeader(  //CABECALHO DO MENU
+              decoration: BoxDecoration(
+              color: Colors.pink,
+              ),
+              child: Text('Menu',
+                  style: TextStyle(color: Colors.white, fontSize: 27.0)),
+            ),
+            ListTile(
+              title: Text('Perfil',
+              style: TextStyle(fontSize: 18.0),
+              ),
+              onTap: () {
+                //REDIRECIONA PRO WIDGET NOMEADO NO app_widget
+                Navigator.of(context).pushNamed('/perfil');
+                /**Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PerfilPage()),
+                );**/
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                //Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Sair',
+                  style: TextStyle(fontSize: 18.0),
+              ),
+              onTap: () {
+                Navigator.of(context).pushReplacementNamed('/login');
+                //Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+        /**child: Align(                     // alinhamento do container
           alignment: Alignment.center, //Essas duas linhas podem ser subs por center
           child: Container(
             height: 360,
@@ -34,9 +110,9 @@ class HomePageState extends State<HomePage>{
                   style: TextStyle(color: Colors.white, fontSize: 20.0)),
             ),
           ),
-        ),
-      ),
-      floatingActionButton: FloatingActionButton( // botao flutuante dir/baixo
+        ),**/
+
+      /**floatingActionButton: FloatingActionButton( // botao flutuante dir/baixo
         child: Icon(Icons.navigate_next), // icone do botao
         onPressed: () {
           setState(() { //muda o estado a cada clicada na tela
@@ -44,7 +120,7 @@ class HomePageState extends State<HomePage>{
             print(counter); // printa no terminal
           });
         } ,
-      ),
+      ),**/
     );
   }
 

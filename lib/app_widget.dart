@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:unimatchteste/cadastro_page.dart';
+import 'package:unimatchteste/loading_page.dart';
+import 'package:unimatchteste/perfil_page.dart';
 
 import 'home_page.dart';
 import 'login_page.dart';
@@ -10,7 +13,14 @@ class AppWidget extends StatelessWidget{ // cria uma build AppWidget
   Widget build(BuildContext context){
     return MaterialApp( //deixa os widgets mais bonitinhos (email...)
       theme: ThemeData(primarySwatch:Colors.pink), // cor do title
-      home: LoginPage(), // tela Home
+      initialRoute: '/loading',
+      routes: {
+        '/loading': (context) => LoadingPage(),
+        '/login': (context) => LoginPage(),
+        '/home': (context) => HomePage(),
+        '/perfil': (context) => PerfilPage(),
+        '/cadastro': (context) => CadastroPage(),
+      },// tela Home
 
     );
     /**return Container(
