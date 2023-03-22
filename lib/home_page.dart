@@ -70,14 +70,18 @@ class HomePageState extends State<HomePage>{
                   color: Colors.black,
                 ),
                 Container(
-                  width: 60,
+                  /**width: 60,
                   height: 60,
-                  color: Colors.green.shade200,
+                  color: Colors.green.shade200,**/
                   child: FilledButton.icon(
-                      icon: Icon(Icons.check_circle),
+
+                      icon: Icon(
+                        Icons.check_circle,
+                        color: Colors.green,
+                      ),
                       label: Container(
-                        width: 60,
-                        height: 60,
+                        width: 40,
+                        height: 60, //overflow aqui
                       ),
                       onPressed: (){
 
