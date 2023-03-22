@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:unimatchteste/Notificacao_page.dart';
 
 import 'home_page.dart';
 import 'login_page.dart';
@@ -140,13 +143,16 @@ class _CadastroPageState extends State<CadastroPage> {
                       MaterialPageRoute(builder: (context) => LoginPage()),
                     );
                   }else{
+                    Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => NotificacaoSenhaPage()),
+                    );
+                    }
                     //RETORNAR ConfSenha COMO NULL,LIMPAR O Q FOI DIGITADO
                     /**ConfSenha.replaceAllMapped( Nu, (match) => Nu,);**/
                     /**setState(() {
                       ConfSenha = null;
                       return ConfSenha.nu;
                     });**/
-                  }
                 }, child: Icon(Icons.done)),
               ],
             ),

@@ -20,19 +20,40 @@ class HomePageState extends State<HomePage>{
       appBar: AppBar(                   // Molda a tela para se assemelhar a um App
         centerTitle : true,
         title : Text('UniMatch'),
-        ),
+        actions: [
+          FilledButton.icon(  //Cria o icone chat
+            icon: Icon(Icons.chat_rounded),
+            label: Container(
+              color: Colors.white,
+            ),
+            onPressed: (){ //REDIRECIONA P/ TELA DE PERFIL, MUDAR P/ TELA DE CHAT
+              Navigator.of(context).pushNamed('/perfil');
+            },
+          )
+        ],
+      ),
       body: Container(
-        height: 900,
-        width: 600,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         color: Colors.pink[100],
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center, //posicao de tudo
           //crossAxisAlignment: CrossAxisAlignment.center, // posicao cruz
           children: [
-            Text('Contador: $counter'),
-            Container(height: 50,),  // espacamento altura
+            Align(
+              heightFactor: 1.1,  //MOVE SÓ O Q ESTÁ ABAIXO DO ALIGN
+              child: SizedBox(
+                child: Container(
+                  height: 562,
+                  width: 340,
+                  color: Colors.white,
+                ),
+              ),
+                //child: Text('Contador: $counter')
+            ),
+            //Container(height: 50,),  // espacamento altura
             //CustomSwitch(),
-            Container(height: 50,),
+
 
             Row(                    // linha/oposto da Column
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -49,10 +70,20 @@ class HomePageState extends State<HomePage>{
                   color: Colors.black,
                 ),
                 Container(
-                  width: 50,
-                  height: 50,
-                  color: Colors.black,
-                )
+                  width: 60,
+                  height: 60,
+                  color: Colors.green.shade200,
+                  child: FilledButton.icon(
+                      icon: Icon(Icons.check_circle),
+                      label: Container(
+                        width: 60,
+                        height: 60,
+                      ),
+                      onPressed: (){
+
+                      }
+                  ),
+                ),
               ],
             )
           ],
