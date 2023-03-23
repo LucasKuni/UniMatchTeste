@@ -98,19 +98,27 @@ class HomePageState extends State<HomePage> {
                   ),
                 ),
                 Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                  ),
-                  child: FilledButton.icon(
-                      icon: Icon(
-                        Icons.check_circle,
-                        color: Color.fromARGB(255, 255, 255, 255),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
+                        child: FilledButton.icon(
+                            icon: Icon(
+                              Icons.check_circle,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            ),
+                            label: Container(),
+                            onPressed: () {
+                            }),
                       ),
-                      label: Container(),
-                      onPressed: () {}),
+                    ],
+                  ),
                 ),
               ],
             )
@@ -146,6 +154,16 @@ class HomePageState extends State<HomePage> {
                 // ...
                 // Then close the drawer
                 //Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text(
+                'Configurações',
+                style: TextStyle(fontSize: 18.0),
+              ),
+              onTap: () {
+                //REDIRECIONA PRO WIDGET NOMEADO NO app_widget
+                Navigator.of(context).pushNamed('/config');
               },
             ),
             ListTile(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unimatchteste/cadastro_page.dart';
+import 'package:unimatchteste/config_page.dart';
 import 'package:unimatchteste/loading_page.dart';
 import 'package:unimatchteste/perfil_page.dart';
 
@@ -20,6 +21,7 @@ class AppWidget extends StatelessWidget{ // cria uma build AppWidget
         '/home': (context) => HomePage(),
         '/perfil': (context) => PerfilPage(),
         '/cadastro': (context) => CadastroPage(),
+        '/config': (context) => ConfigPage(),
       },// tela Home
 
     );

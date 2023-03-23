@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:unimatchteste/config_page.dart';
+import 'package:unimatchteste/home_page.dart';
 
 import 'login_page.dart';
 
@@ -20,7 +22,7 @@ class PerfilPageState extends State<PerfilPage> {
     return Scaffold(
       appBar: AppBar(                   // Molda a tela para se assemelhar a um App
         centerTitle : true,
-        title : Text('UniMatch'),
+        title : Text('Perfil'),
       ),
       body: SingleChildScrollView(  //permite dar Scroll na tela enquanto digita
         child: SizedBox(            //Box de Login
@@ -31,6 +33,17 @@ class PerfilPageState extends State<PerfilPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Center(
+                  child: Container(
+                    height: 220,
+                    width: 220,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.purpleAccent.shade100,
+                    ),
+                  ),
+                ),
+                Container(height: 50,),
                 TextField(
                   onChanged: (text){
                     print(text);
@@ -48,9 +61,30 @@ class PerfilPageState extends State<PerfilPage> {
                     print(text);
                     email = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
-                    labelText: 'Email',
+                    labelText: 'Nome de Usuário',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                /**Container(height: 10,),
+                    TextField(
+                    onChanged: (text){
+                    print(text);
+                    CPF = text;
+                    },
+                    decoration: InputDecoration(      // coloca borda no textfield
+                    labelText: 'CPF',
+                    border: OutlineInputBorder(),
+                    ),
+                    ),**/
+                Container(height: 10,),
+                TextField(
+                  onChanged: (text){
+                    print(text);
+                    Uni = text;
+                  },
+                  decoration: InputDecoration(      // coloca borda no textfield
+                    labelText: 'Gênero',
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -58,43 +92,27 @@ class PerfilPageState extends State<PerfilPage> {
                 TextField(
                   onChanged: (text){
                     print(text);
-                    senha = text;
+                    UniPref = text;
                   },
-                  obscureText:  true,  //deixa senha nao visivel
                   decoration: InputDecoration(      // coloca borda no textfield
-                    labelText: 'Senha',
-                    border: OutlineInputBorder(),
-                  ),
-                ),
-                Container(height: 10,),
-                TextField(
-                  onChanged: (text){
-                    print(text);
-                    ConfSenha = text;
-                  },
-                  obscureText:  true,  //deixa senha nao visivel
-                  decoration: InputDecoration(      // coloca borda no textfield
-                    labelText: 'Confirmar senha',
+                    labelText: 'Bio',
                     border: OutlineInputBorder(),
                   ),
                 ),
 
                 Container(height: 20,),
                 ElevatedButton(onPressed: (){
-                  if(senha == ConfSenha){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
-                    );
-                  }else{
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ConfigPage()),
+                  );
                     //RETORNAR ConfSenha COMO NULL,LIMPAR O Q FOI DIGITADO
                     /**ConfSenha.replaceAllMapped( Nu, (match) => Nu,);**/
                     /**setState(() {
                         ConfSenha = null;
                         return ConfSenha.nu;
                         });**/
-                  }
-                }, child: Icon(Icons.done)),
+                }, child: Text('Editar dados cadastrais!')),
               ],
             ),
           ),
