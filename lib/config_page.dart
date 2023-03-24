@@ -6,15 +6,15 @@ import 'package:unimatchteste/Notificacao_page.dart';
 import 'home_page.dart';
 import 'login_page.dart';
 
-class CadastroPage extends StatefulWidget {
+class ConfigPage extends StatefulWidget {
   @override
-  _CadastroPageState createState() => _CadastroPageState();
+  _ConfigPageState createState() => _ConfigPageState();
 }
 
-class _CadastroPageState extends State<CadastroPage> {
+class _ConfigPageState extends State<ConfigPage> {
   int counter = 0;
   String email = '', DatNasc = '', Uni = '', nome = '', Telefone = '',
-  senha = '', ConfSenha = '', CPF = '', UniPref = '', Nu = '';
+      senha = '', ConfSenha = '', CPF = '', UniPref = '', Nu = '';
   //Null Nu = null;
 
   @override
@@ -22,7 +22,7 @@ class _CadastroPageState extends State<CadastroPage> {
     return Scaffold(
       appBar: AppBar(                   // Molda a tela para se assemelhar a um App
         centerTitle : true,
-        title : Text('Cadastro'),
+        title : Text('Informações Pessoais'),
       ),
       body: SingleChildScrollView(  //permite dar Scroll na tela enquanto digita
         child: SizedBox(            //Box de Login
@@ -56,16 +56,16 @@ class _CadastroPageState extends State<CadastroPage> {
                   ),
                 ),
                 /**Container(height: 10,),
-                TextField(
-                  onChanged: (text){
+                    TextField(
+                    onChanged: (text){
                     print(text);
                     CPF = text;
-                  },
-                  decoration: InputDecoration(      // coloca borda no textfield
+                    },
+                    decoration: InputDecoration(      // coloca borda no textfield
                     labelText: 'CPF',
                     border: OutlineInputBorder(),
-                  ),
-                ),**/
+                    ),
+                    ),**/
                 Container(height: 10,),
                 TextField(
                   onChanged: (text){
@@ -140,20 +140,20 @@ class _CadastroPageState extends State<CadastroPage> {
                   if(senha == ConfSenha){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginPage()),
+                      MaterialPageRoute(builder: (context) => HomePage()),
                     );
                   }else{
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) => NotificacaoSenhaPage()),
                     );
-                    }
-                    //RETORNAR ConfSenha COMO NULL,LIMPAR O Q FOI DIGITADO
-                    /**ConfSenha.replaceAllMapped( Nu, (match) => Nu,);**/
-                    /**setState(() {
+                  }
+                  //RETORNAR ConfSenha COMO NULL,LIMPAR O Q FOI DIGITADO
+                  /**ConfSenha.replaceAllMapped( Nu, (match) => Nu,);**/
+                  /**setState(() {
                       ConfSenha = null;
                       return ConfSenha.nu;
-                    });**/
-                }, child: Icon(Icons.done)),
+                      });**/
+                }, child: Text('Confirmar Alterações!')),
               ],
             ),
           ),
