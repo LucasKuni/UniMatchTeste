@@ -76,7 +76,6 @@ class HomePageState extends State<HomePage> {
                     
                       child: IconButton(
                         icon: Image.asset('assets/deslike.png'),
-                        iconSize: 120,
                         onPressed: () {
                           // código a ser executado quando o botão for pressionado
                         },
